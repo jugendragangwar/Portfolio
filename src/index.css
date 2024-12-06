@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  font-family: 'Arial', sans-serif;
+
+}
+
+/* Add this to your global CSS file or inside the <style> tag */
+/* .nav-link {
+  position: relative;
+} */
+
+/* .nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  transition: width 0.3s ease;
+} */
+
+/* .nav-link:hover::after {
+  width: 100%;
+} */
