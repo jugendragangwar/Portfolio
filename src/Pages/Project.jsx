@@ -1,6 +1,6 @@
 import React from 'react';
 import Portfolio from '../assets/Portfolio.png'
-import Divine from '../assets/Divine.png'
+import Divine from '../assets/divine.png'
 import Weather from '../assets/Weather.png'
 import Food from '../assets/Food.png'
 import Beris from '../assets/Beris.png'
