@@ -1,8 +1,9 @@
 import Skills from "./Skills";
 import Services from "./Services";
 import Hero from "./Hero";
-import AboutSection from "./AboutSection";
 import Project from "./Project";
+import Contact from "./Contectme";
+import AboutSection from "./AboutSection";
 
 const Home = () => {
 
@@ -13,10 +14,12 @@ const Home = () => {
     <>
       <div className="">
        <Hero/>
-       <AboutSection/>
+   
         <Skills />
+        <AboutSection/>
         <Services />
         <Project />
+        <Contact/>
       </div>
     </>
   );

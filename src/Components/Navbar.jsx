@@ -32,7 +32,7 @@ const Navbar = () => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full bg-gray-900 shadow-xl transition-transform duration-300 z-50 ${isVisible ? "translate-y-0" : "-translate-y-full"
+            className={`fixed top-0 left-0 w-full bg-black shadow-xl transition-transform duration-300 z-50 ${isVisible ? "translate-y-0" : "-translate-y-full"
                 }`}
         >
             <div className="container mx-auto flex justify-between items-center lg:px-8">

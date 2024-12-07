@@ -1,10 +1,12 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './Pages/Home'
-// import AboutSection from './Pages/AboutSection'
-import Contectme from './Pages/Contectme'
-import Skills from './Pages/Skills'
 import Navbar from './Components/Navbar'
+import AboutSection from './Pages/AboutSection'
+import Contectme from './Pages/Contectme'
+import Project from './Pages/Project'
+import Services from './Pages/Services'
+import Skills from './Pages/Skills'
 
 
 
@@ -14,11 +16,11 @@ const App = () => {
     <Navbar/>
       <Routes>
         <Route path='/' element={<Home />} />
-        {/* <Route path='/AboutSection' element={<AboutSection />} /> */}
-        {/* <Route path='/Project' element={<Project />} /> */}
-        <Route path='/contectme' element={<Contectme />} />
+        <Route path='/AboutSection' element={<AboutSection />} />
+        <Route path='/Contectme' element={<Contectme />} />
+        <Route path='/Project' element={<Project />} />
+        <Route path='/Services' element={<Services />} />
         <Route path='/Skills' element={<Skills />} />
-        {/* <Route path='/socialicons' element={<SocialIcons/>} /> */}
       </Routes>
     </BrowserRouter>
   )

@@ -1,51 +1,70 @@
 import React from 'react';
-
+import SkillsCrousle from './SkillsCrousle'
 const Skills = () => {
     const skills = [
         {
-            name: 'Web Design',
-            percentage: 80,
-            color: '#FF6464',
-        },
-        {
-            name: 'Mobile App',
-            percentage: 95,
-            color: '#9272D4',
-        },
-        {
-            name: 'Illustrator',
-            percentage: 65,
-            color: '#5185D4',
-        },
-        {
-            name: 'Photoshop',
-            percentage: 75,
-            color: '#CA56F2',
-        },
-        {
             name: 'JavaScript',
-            percentage: 90,
+            percentage: 70,
             color: '#F7DF1E',
         },
         {
             name: 'React',
-            percentage: 95,
+            percentage: 65,
             color: '#61DAFB',
         },
         {
-            name: 'Node.js',
+            name: 'Tailwind CSS',
+            percentage: 90,
+            color: '#06B6D4',
+        },
+        {
+            name: 'Web Design',
             percentage: 85,
+            color: '#FF6464',
+        },
+        {
+            name: 'Responsive Design',
+            percentage: 95,
             color: '#3C873A',
         },
         {
-            name: 'Tailwind CSS',
+            name: 'Canva',
+            percentage: 50,
+            color: '#CA56F2',
+        },
+        {
+            name: 'TypeScript',
+            percentage: 60,
+            color: '#3178C6',
+        },
+        {
+            name: 'Redux',
+            percentage: 50,
+            color: '#764ABC', // State management for React applications
+        },
+        {
+            name: 'Git & GitHub',
             percentage: 80,
-            color: '#06B6D4',
+            color: '#F1502F', // Version control and collaboration
+        },
+        {
+            name: 'Performance Optimization',
+            percentage: 65,
+            color: '#FFB703', 
+        },
+        {
+            name: 'Soft Skills (Collaboration, Communication)',
+            percentage: 85,
+            color: '#FF7A00', 
         },
     ];
+    
 
     return (
-        <section className="h-full py-10 bg-black dark:bg-gray-800">
+        <>
+            <SkillsCrousle/>
+    
+        <section className="h-full py-10 min-h-screen bg-black">
             <div className="max-w-4xl mx-auto px-4">
                 <h4 className="text-3xl md:text-5xl text-white font-bold mb-10 text-center">
                  My Skills
@@ -78,6 +97,7 @@ const Skills = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

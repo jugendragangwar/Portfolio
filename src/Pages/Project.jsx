@@ -1,51 +1,57 @@
 import React from 'react';
+import Portfolio from '../assets/Portfolio.png'
+import Divine from '../assets/Divine.png'
+import Weather from '../assets/Weather.png'
+import Food from '../assets/Food.png'
+import Beris from '../assets/Beris.png'
+import NFC from '../assets/NFC.png'
 
 const Project = () => {
-    // Projects data array
     const projects = [
         {
             id: 1,
-            title: 'Portfolio Website',
-            description: 'A modern and responsive personal portfolio.',
-            image: 'https://placehold.jp/150x150.png',
+            title: 'Personal Portfolio Website',
+            description: 'A sleek and responsive personal portfolio built with React.js and Tailwind CSS. Showcases skills, projects, and contact information in an elegant dark theme.',
+            image: Portfolio,
             link: '#',
         },
         {
             id: 2,
-            title: 'E-commerce Store',
-            description: 'A scalable and user-friendly e-commerce platform.',
-            image: 'https://placehold.jp/150x150.png',
-            link: '#',
+            title: 'Divine Spiritual Platform',
+            description: 'A spiritually focused platform offering resources, community engagement, and e-commerce capabilities for spiritual products and services.',
+            image: Divine,
+            link: 'https://divinezone.in/',
         },
         {
             id: 3,
-            title: 'Social Media App',
-            description: 'A feature-rich social media application.',
-            image: 'https://placehold.jp/150x150.png',
-            link: '#',
+            title: 'Weather Application',
+            description: 'An interactive weather application providing real-time forecasts, location-based data, and a user-friendly interface for planning and insights.',
+            image: Weather,
+            link: 'https://weather-application-wine-nu.vercel.app/',
         },
         {
             id: 4,
-            title: 'Blog Platform',
-            description: 'A dynamic blog platform with CMS capabilities.',
-            image: 'https://placehold.jp/150x150.png',
+            title: 'Food Website',
+            description: 'A vibrant food blogging platform featuring dynamic recipe management, stunning visuals, and an integrated CMS for content creators.',
+            image: Food,
             link: '#',
         },
         {
             id: 5,
-            title: 'Mobile App Design',
-            description: 'An intuitive mobile application design.',
-            image: 'https://placehold.jp/150x150.png',
-            link: '#',
+            title: 'Beris Magic Web Application',
+            description: 'A captivating web application offering unique interactive features and a visually immersive experience tailored to user needs.',
+            image: Beris,
+            link: 'https://berismagic.in/',
         },
         {
             id: 6,
-            title: 'Cloud Integration Tool',
-            description: 'A cloud integration tool for seamless operations.',
-            image: 'https://placehold.jp/150x150.png',
+            title: 'NFC Smart Card Integration',
+            description: 'An advanced NFC-based solution enabling secure, seamless transactions and cloud integrations for modern businesses.',
+            image: NFC,
             link: '#',
         },
     ];
+    
 
     return (
         <section className="py-16 bg-[#1a1a1a] text-white">
@@ -69,9 +75,9 @@ const Project = () => {
                             />
 
                             {/* Hover Overlay */}
-                            <div className="absolute inset-0 bg-[#FFBD39] bg-opacity-80 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <div className="absolute inset-0 bg-[#FFBD39]  flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                 <h3 className="text-xl font-bold text-black mb-2">{project.title}</h3>
-                                <p className="text-black mb-4">{project.description}</p>
+                                <p className="text-black mb-4 text-center">{project.description}</p>
                                 <div className="flex space-x-4">
                                     <a
                                         href={project.link}
