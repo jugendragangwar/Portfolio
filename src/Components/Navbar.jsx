@@ -1,90 +1,102 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { NAV_ITEMS } from "../Constants/Constants";
 
-const Navbar = () => {
-    const [isVisible, setIsVisible] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        let lastScrollY = window.scrollY;
-
         const handleScroll = () => {
-            if (window.scrollY > lastScrollY) {
-                setIsVisible(true);
-            } else {
-                setIsVisible(false);
-            }
-            lastScrollY = window.scrollY;
+            setIsScrolled(window.scrollY > 0);
         };
 
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
-    const handleMenuToggle = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
-    };
+    const ListItem = [
+        { name: "Home", link: "/" },                 // Home should be the first item.
+        { name: "About Us", link: "AboutSection" },   // Rename "About" to "About Us" for clarity.
+        { name: "Our Skills", link: "Skills" },       // Rename "Skills" to something more descriptive like "Our Skills".
+        // { name: "Our Work", link: "Work" },           // Group Services and Projects under "Our Work".
+        { name: "Services", link: "Services" },
+        { name: "Projects", link: "Project" },
+        { name: "Contact", link: "Contectme" },
+    ];
 
-    const closeMenu = () => {
-        setIsMobileMenuOpen(false);
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
     };
 
     return (
         <nav
-            className={`fixed top-0 left-0 w-full bg-black shadow-xl transition-transform duration-300 z-50 ${isVisible ? "translate-y-0" : "-translate-y-full"
-                }`}
+            className={`fixed top-0 left-0 w-full bg-black shadow-xl transition-transform duration-300 z-50 ${isScrolled ? "translate-y-0" : "-translate-y-full"}`}
         >
-            <div className="container mx-auto flex justify-between items-center lg:px-8">
-                <a
-                    href="#home"
+            <div className="container flex justify-between items-center px-4 lg:px-8">
+                <Link
+                    to="/"
                     className="text-2xl font-bold text-yellow-400 p-3 lg:p-4 lg:ml-4"
                 >
                     JUGENDRA
-                </a>
+                </Link>
 
-                {/* Mobile Toggle */}
-                <button
-                    className="lg:hidden text-gray-400 focus:outline-none"
-                    aria-expanded={isMobileMenuOpen}
-                    onClick={handleMenuToggle}
-                >
-                    {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-                </button>
-
-                {/* Navbar Links */}
-                <div
-                    className={`lg:flex lg:items-center lg:space-x-8 fixed lg:relative lg:top-0 top-0 left-0 w-full lg:w-auto lg:h-auto bg-gray-900 lg:bg-transparent lg:translate-y-0 transition-transform duration-300 z-40 ${isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
-                        }`}
-                >
-                    {/* Overlay */}
-                    {isMobileMenuOpen && (
-                        <div
-                            className="fixed inset-0 bg-black opacity-50 z-30"
-                            onClick={closeMenu}
-                        ></div>
-                    )}
-
-                    {/* Links */}
-                    <div className="flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-8 z-50 px-6 lg:px-0 py-6 lg:py-0">
-                        {NAV_ITEMS.map((item, index) => (
-                            <a
-                                key={index}
-                                href={item.link}
-                                className="text-lg font-medium text-white hover:text-yellow-400 relative group"
-                                onClick={closeMenu}
-                            >
-                                {item.name}
-                                {/* Animated underline */}
-                                <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
-                            </a>
+                {/* Desktop Navigation Links */}
+                <div className="hidden lg:flex lg:items-center lg:space-x-8">
+                    <ul className="flex gap-6 text-lg font-medium">
+                        {ListItem.map((item, index) => (
+                            <li key={index}>
+                                <Link
+                                    to={item.link}
+                                    className="text-lg font-medium text-white hover:text-yellow-400 relative group"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {item.name}
+                                    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+                                </Link>
+                            </li>
                         ))}
-                    </div>
-
+                    </ul>
                 </div>
+
+                {/* Mobile Menu */}
+                <div
+                    className={`absolute -top-[49px] left-0 w-full h-screen bg-black z-50 transform transition-transform duration-500 ease-in-out mt-16 ${isOpen ? "translate-x-0" : "-translate-x-full"
+                        }`}
+                    id="mobile-menu"
+                >
+                    {/* Navigation Links */}
+                    <ul className="flex flex-col items-start gap-4 text-base font-medium px-4  z-10">
+                        <Link
+                            to="/"
+                            className="text-2xl font-bold text-yellow-400 "
+                        >
+                            JUGENDRA
+                        </Link>
+
+                        {ListItem.map((item) => (
+                            <li key={item.name} className="w-full px-2 text-white">
+                                <a
+                                    href={item.link}
+                                    className="w-full"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {item.name}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* Mobile Menu Toggle Button */}
+                <button onClick={toggleMenu} className="fixed top-4 right-4 lg:hidden z-50" aria-expanded={isOpen} aria-label="Toggle navigation">
+                    {isOpen ? <FaTimes className="w-6 h-6 text-[#FFBD39]" /> : <FaBars className="w-6 h-6 text-[#FFBD39]" />}
+                </button>
             </div>
         </nav>
     );
-};
+}
 
 export default Navbar;

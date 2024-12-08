@@ -24,9 +24,9 @@ const skills = [
 
 const SkillsCrousle = () => {
   return (
-    <div className="overflow-hidden w-full bg-black py-10">
+    <div className="overflow-hidden w-full bg-black py-10 ">
       <div
-        className="flex gap-5"
+        className="flex hap-6 md:gap-32 mx-6 md:mx-20"
         style={{
           animation: 'scroll 15s linear infinite',
           display: 'flex',

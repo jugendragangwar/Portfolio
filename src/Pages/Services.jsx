@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const Services = () => {
     const services = [
@@ -80,11 +80,9 @@ const Services = () => {
     return (
         <section className="py-16 bg-black text-white ">
             <div className=" text-center mx-6 md:mx-20">
-                <h2 className="text-4xl font-bold mb-8">Our Services</h2>
-                <p className="text-gray-400 mb-12 text-center">
-                    Browse through a collection of my best work, showcasing my expertise in front-end development, UI/UX design, and responsive web applications. <br />
-                    Each project reflects my commitment to creating user-centered, high-performance digital experiences <br />
-                    tailored to meet the unique needs of clients.
+                <h2 className="text-4xl font-bold mb-8 text-[#FFBD39]">Solutions We Provide</h2>
+                <p className="text-gray-400 mb-12 text-justify sm:text-left">
+                    Browse through a collection of my best work, showcasing my expertise in front-end development, UI/UX design, and responsive web applications. Each project reflects my commitment to creating user-centered, high-performance digital experiences tailored to meet the unique needs of clients.
                 </p>
 
                 {/* Grid layout for services */}
@@ -92,7 +90,7 @@ const Services = () => {
                     {services.map((service) => (
                         <div
                             key={service.id}
-                            className=" bg-[] hover:bg-[#FFBD39] bg-[#1a1a1a]  hover:text-black py-16  transform hover:scale-105 transition-all duration-300"
+                            className="shadowForCard  py-16"
                         >
                             <img
                                 src={service.icon || 'https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ='}

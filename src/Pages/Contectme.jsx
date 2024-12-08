@@ -76,10 +76,10 @@ const Contact = () => {
 
   return (
     <section className="body-font relative bg-black text-white">
-      <div className="container mx-auto px-5 py-24">
+      <div className="mx-6 md:mx-20 py-24">
         {/* Heading */}
         <div className="mb-12 flex w-full flex-col text-center">
-          <h1 className="title-font mb-4 text-2xl font-medium text-white sm:text-3xl">
+          <h1 className="title-font mb-4 text-2xl font-medium text-[#FFBD39]  sm:text-3xl">
             Contact Us
           </h1>
           <p className="mx-auto text-base leading-relaxed lg:w-2/3">

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
   return (
@@ -10,8 +10,6 @@ const HeroSection = () => {
           backgroundImage: "url('https://techakim.com/sam/tg/7268/li/imgs/bg-portfolio.jpg')",
         }}
       >
-        {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-black opacity-40"></div>
 
         {/* Content Section */}
         <div className="w-full h-full flex justify-center items-center px-6 sm:px-12 lg:px-20 text-white relative">
@@ -22,21 +20,16 @@ const HeroSection = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-[#FFBD39]">
               Jugendra Gangwar
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 mb-6">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 sm:mt-4 mb-6">
               I am an experienced Front-End developer with 1+ years of expertise in JavaScript and React.js.
             </p>
 
-            {/* Buttons */}
-            <div className="flex justify-center sm:justify-start gap-4">
-              <Link to='/Contectme'>
-              <button className="px-6 py-3 text-lg font-semibold rounded-md bg-[#FFBD39] text-black hover:bg-yellow-500 transition-all">
+            {/* Button */}
+            <Link to='/Contectme'>
+              <button className="btn ease-in-out delay-100 duration-300">
                 Click For Hire Me
               </button>
-              </Link>
-              {/* <button className="px-6 py-3 text-lg font-semibold outline outline-2 rounded-md text-white hover:text-[#FFBD39] cursor-pointer transition-all">
-                About Me
-              </button> */}
-            </div>
+            </Link>
           </div>
         </div>
       </div>

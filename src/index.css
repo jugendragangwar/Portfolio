@@ -26,3 +26,47 @@ body {
 /* .nav-link:hover::after {
   width: 100%;
 } */
+
+
+.btn {
+  padding: 1rem 4rem;
+  font-size: clamp(0.8rem, 4vw, 1rem);
+  font-weight: 600;
+  background: transparent;
+  color: #18d25f;
+  border-radius: 0.5rem;
+  border-bottom: 2px solid #18d25f;
+  border-right: 2px solid #18d25f;
+  border-top: 2px solid rgb(9, 199, 251, 0.7);
+  border-left: 2px solid rgb(9, 199, 251, 0.7);
+  transition-duration: 1s;
+  transition-property: border-top, border-left, border-bottom, border-right,
+    box-shadow;
+  cursor: pointer;
+  outline-color: transparent;
+  text-decoration: underline;
+}
+
+
+.btn:hover {
+  border-top: 2px solid #18d25f;
+  border-left: 2px solid #18d25f;
+  border-bottom: 2px solid rgb(9, 199, 251, 0.7);
+  border-right: 2px solid rgb(9, 199, 251, 0.7);
+  box-shadow: rgba(234, 243, 101, 0.4) 5px 5px, rgba(239, 255, 90, 0.3) 10px 10px,
+    rgb(9, 199, 251, 0.2) 15px 15px;
+}
+
+.shadowForCard {
+  border-width: 1px; /* border */
+  border-color: #FFBD39;
+  transition: all 0.3s ease; 
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.shadowForCard:hover {
+  transform: scale(1.02); /* Slightly zoom in on hover */
+  box-shadow: -20px 0 25px rgba(255, 255, 255, 0.3), 20px 0 25px rgba(252, 252, 252, 0.3);
+  background-color:#FFBD39;
+  color: black;
+}

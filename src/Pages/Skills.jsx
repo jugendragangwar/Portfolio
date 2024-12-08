@@ -64,10 +64,10 @@ const Skills = () => {
         <>
             <SkillsCrousle/>
     
-        <section className="h-full py-10 min-h-screen bg-black">
-            <div className="max-w-4xl mx-auto px-4">
-                <h4 className="text-3xl md:text-5xl text-white font-bold mb-10 text-center">
-                 My Skills
+        <section className="h-full py-10 min-h-screen  bg-black">
+            <div className="mx-6 md:mx-20">
+                <h4 className="text-3xl md:text-5xl font-bold mb-10 text-center  text-[#FFBD39]">
+                Tools & Technologies
                 </h4>
 
                 {/* Grid Layout for Skills */}
